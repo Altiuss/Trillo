@@ -140,12 +140,29 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin: 0;
+
+    }
+
 
     &__item {
         position: relative;
 
         &:not(:last-child) {
             margin-bottom: .5rem;
+
+            @media only screen and (max-width: $bp-medium){
+              
+                margin: 0;
+                
+            }
+        }
+
+        @media only screen and (max-width: $bp-medium){
+          flex: 1;
+            
         }
     }
 
@@ -187,6 +204,12 @@
         align-items: center;
         position: relative;
         z-index: 3;
+
+        @media only screen and (max-width: $bp-medium){
+         justify-content: center;
+         padding: 2rem;
+            
+        }
     }
 
     &__link:hover {
@@ -212,6 +235,11 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+
+    @media only screen and (max-width: $bp-medium){
+       display: none;
+        
+    }
 }
 
 
@@ -425,7 +453,9 @@
         margin-right: auto;
     }
 
-    &__friends {}
+    &__friends {
+        display: flex;
+    }
 
     &__photo {
         box-sizing: content-box;
@@ -435,7 +465,7 @@
         border: 3px solid white;
 
         &:not(:last-child) {
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
     }
 }
@@ -450,6 +480,12 @@
     margin-bottom: 3.5rem;
     position: relative;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-medium){
+        padding: 2rem;
+        margin-bottom: 3rem;
+         
+     }
 
     &__text {
         margin-bottom: 2rem;
@@ -520,6 +556,11 @@
     padding: 3.5rem 0;
     text-align: center;
 
+    @media only screen and (max-width: $bp-medium){
+        padding: 2.5rem 0;
+         
+     }
+
     &__book-now {
         font-size: 2rem;
         font-weight: 300;
@@ -544,7 +585,7 @@
     overflow: hidden;
     cursor: pointer;
 
-    & > * {
+    &>* {
         display: inline-block;
         height: 100%;
         width: 100%;
@@ -552,19 +593,18 @@
     }
 
     &__visible {
-        
-      
+
+
         padding: 2rem 7.5rem;
     }
 
     &__invisible {
-      
+
         position: absolute;
         padding: 2rem 0;
-     
         left: 0;
         top: -100%;
-        
+
     }
 
     &:hover {
@@ -578,6 +618,7 @@
     &:hover &__invisible {
         top: 0;
     }
+
     &:focus {
         outline: none;
         animation: pulsate 1s infinite;
