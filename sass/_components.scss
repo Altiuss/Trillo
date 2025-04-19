@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: center;
 
-    @media only screen and (max-width: $bp-smallest){
+    @media only screen and (max-width: $bp-smallest) {
         order: 1;
         flex: 0 0 100%;
 
@@ -468,18 +468,23 @@
         margin-right: .7rem;
 
         //OLD BROWSERS
-        //background-image: url(../img/chevron-thin-right.svg);
-        //background-size: cover;
+        background-image: url(../img/chevron-thin-right.svg);
+        background-size: cover;
 
 
         //NEW BROWSERS - MASKS
-        background-color: var(--color-primary);
-        -webkit-mask-image: url(../img/chevron-thin-right.svg);
-        -webkit-mask-size: cover;
+        @supports (-webkit-mask-image: url()) or (-webkit-mask-image: url()) {
 
-        mask-image: url(../img/chevron-thin-right.svg);
-        mask-size: cover;
-    }
+            background-color: var(--color-primary);
+            -webkit-mask-image: url(../img/chevron-thin-right.svg);
+            -webkit-mask-size: cover;
+            mask-image: url(../img/chevron-thin-right.svg);
+            mask-size: cover;
+            background-image:none;
+        }
+        }
+
+       
 }
 
 ///////////////////////////////////////////
